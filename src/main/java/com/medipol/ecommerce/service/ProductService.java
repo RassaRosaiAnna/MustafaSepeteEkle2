@@ -39,22 +39,19 @@ public class ProductService {
     public void update(Integer id, String name, Integer price) {
         //TODO
 
-        // Product product = null;
-
         for (int i = 0; i < products.size(); i++) {
             if (id == products.get(i).getId()) {
-                //   product = products.get(i);
+                // Id Sabit olduğundan Değiştirmedim.
+                //products.get(i).setId(1);
                 products.get(i).setName(name);
                 products.get(i).setPrice(price);
                 break;
             }
         }
 
-        //  product.setName(name);
-        // product.setPrice(price);
-
 //        for (Product product : products) {
 //            if(product.getId() == id){
+//                product.setId(id);
 //                product.setName(name);
 //                product.setPrice(price);
 //                break;

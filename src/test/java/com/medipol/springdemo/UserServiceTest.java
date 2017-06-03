@@ -19,6 +19,15 @@ public class UserServiceTest {
         assertThat(response.size(), Matchers.equalTo(1));
         assertThat(response.get(0).getName(), Matchers.equalTo("mustafa"));
 
+        final String newUserName = "randomName";
+        final String newUserSurname = "randomSurname";
+
+
+        assertThat(response.size(), Matchers.equalTo(1));
+        assertThat(response.get(0).getName(), Matchers.equalTo(newUserName));
+        assertThat(response.get(0).getSurname(), Matchers.equalTo(newUserSurname));
+
+
     }
 
     @Test
