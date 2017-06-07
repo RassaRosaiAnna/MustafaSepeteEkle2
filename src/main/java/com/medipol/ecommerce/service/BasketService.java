@@ -78,14 +78,9 @@ public class BasketService {
         return basket;
     }
 
-    public Integer getBasketPrice( ) {
+    public Integer getBasketPrice() {
         //TODO  sepet tutarini donmeli
-
-
-        //return basket.calculateBasketPrice();
-        Basket basket = new Basket();
-       // basket.calculateBasketPrice();
-        return  basket.calculateBasketPrice();
+        return basket.calculateBasketPrice();
 
     }
 

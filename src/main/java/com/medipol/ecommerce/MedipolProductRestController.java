@@ -9,14 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping()//TODO
+@RequestMapping(path = "/medipol1")//TODO
 @RestController
 public class MedipolProductRestController {
 
-    @Autowired private BasketService basketService;
-    @Autowired private ProductService productService;
-
-    // BURASI TAMAM
+    @Autowired private BasketService basketService = new BasketService();
+    @Autowired private ProductService productService = new ProductService();
 
     @RequestMapping(path = "/addProduct")
     public void addToProduct(int Id,String productName,int productQuantity){

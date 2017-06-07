@@ -1,5 +1,7 @@
 package com.medipol.ecommerce.model;
 
+import com.medipol.ecommerce.service.BasketService;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,17 +18,13 @@ public class Basket {
         return items;
     }
 
-    public Integer calculateBasketPrice() {
-
+    public int calculateBasketPrice() {
+        int result = 0;
         //TODO
-       //  items.get(0).price();
-
-        //BasketItem basketItem = null;
-
-       // return basketItem.price();
-
-
-        return 11;
+        for(int i = 0; i<items.size(); i++){
+             result = result + items.get(i).getQuantity()*items.get(i).getProduct().getPrice();
+        }
+        return result;
 
     }
 }

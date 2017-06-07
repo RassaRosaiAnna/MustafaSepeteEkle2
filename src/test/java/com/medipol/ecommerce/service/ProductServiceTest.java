@@ -68,10 +68,6 @@ public class ProductServiceTest {
         assertTrue(productService.findBy(2).getName().equals("Bellona"));
         assertTrue(productService.findBy(3).getName().equals("Casper"));
 
-
-
-
-
     }
 
     @Test

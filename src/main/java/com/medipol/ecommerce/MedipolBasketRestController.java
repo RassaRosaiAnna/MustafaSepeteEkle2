@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RequestMapping()//TODO
+@RequestMapping(path = "/medipol2")//TODO
 @RestController
 public class MedipolBasketRestController {
 
@@ -21,10 +21,8 @@ public class MedipolBasketRestController {
     //decrementQuantity
     //getBasketPrice
 
-
-
-    @Autowired private  BasketService basketService;
-    @Autowired private ProductService productService;
+    @Autowired private  BasketService basketService = new BasketService();
+    @Autowired private ProductService productService = new ProductService();
 
     @RequestMapping(path = "/addToBasket")
     public Basket addToBasket(@RequestParam int productId, @RequestParam int quantity) {
@@ -60,12 +58,14 @@ public class MedipolBasketRestController {
         basketService.incrementQuantity(product,productId);
     }
 
-
     @RequestMapping(path = "/decrementQuantity")
     public void decrementQuantity(@RequestParam Product product,@RequestParam Integer productId){
         basketService.decrementQuantity(product,productId);
     }
 
-
+    @RequestMapping(path = "/removeProduct")
+    public void removeProduct(@RequestParam Product product){
+        basketService.removeProduct(product);
+    }
 
 }

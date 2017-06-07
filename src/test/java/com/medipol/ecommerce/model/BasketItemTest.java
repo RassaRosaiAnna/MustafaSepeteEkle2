@@ -28,13 +28,13 @@ public class BasketItemTest {
     public void shouldCalculatePriceWhenQuantityIsThree() throws Exception {
         //TODO
 
-        final Product product = new Product(2, "nike air", 10);
-        final BasketItem basketItem = new BasketItem(1, product);
+        final Product product = new Product(2, "deep corner", 10);
+        final BasketItem basketItem = new BasketItem(3, product);
 
         final Integer result = basketItem.price();
 
-        assertTrue(basketItem.getQuantity() == 1);
-        assertTrue(result == 10);
+        assertTrue(basketItem.getQuantity() == 3);
+        assertTrue(result == 30);
 
 
     }
